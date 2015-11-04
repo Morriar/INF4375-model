@@ -77,12 +77,11 @@ public class Client {
     // Make a POST request
     public static Request makePOST(PrintWriter out) {
         String method = "POST";
-        String uri = "/albums/10";
+        String uri = "/albums/";
         String version = "HTTP/1.1";
         StringBuilder body = new StringBuilder();
         body.append("\r\n");
         body.append("{"
-                + "\"id\": \"10\","
                 + "\"title\": \"My New Album\","
                 + "\"artist\": \"By this amazing artist, me!\","
                 + "\"instock\": true,"
@@ -97,12 +96,13 @@ public class Client {
     // Make a PUT request
     public static Request makePUT(PrintWriter out) {
         String method = "PUT";
-        String uri = "/albums/1";
+        String uri = "/albums/5";
         String version = "HTTP/1.1";
         StringBuilder body = new StringBuilder();
         body.append("\r\n");
         body.append("{"
-                + "\"instock\": true"
+                + "\"instock\": false,"
+                + "\"year\": 3000"
                 + "}");
         Request request = new Request(method, uri, version, body.toString());
         request.headers.put("Content-Type", "text/json");
@@ -112,7 +112,7 @@ public class Client {
     // Make a DELETE request
     public static Request makeDELETE(PrintWriter out) {
         String method = "DELETE";
-        String uri = "/albums/1";
+        String uri = "/albums/5";
         String version = "HTTP/1.1";
         Request request = new Request(method, uri, version, null);
         request.headers.put("Content-Type", "text/json");
