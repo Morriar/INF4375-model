@@ -15,14 +15,10 @@
  */
 package inf4375.exercices;
 
+import inf4375.model.Catalog;
+import inf4375.model.JsonDAOAlbums;
 import inf4375.server.controllers.AlbumsController;
 import inf4375.server.Router;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import javax.json.Json;
-import javax.json.JsonArray;
-import javax.json.JsonReader;
 
 /**
  * Example of REST service based on JSON.
@@ -30,18 +26,10 @@ import javax.json.JsonReader;
 public class Main {
 
     public static void main(String[] args) {
-        File jsonFile = new File("json/catalog.json");
-        try (FileInputStream inputStream = new FileInputStream(jsonFile)) {
-            JsonReader reader = Json.createReader(inputStream);
-            JsonArray catalog = reader.readArray();
-
-            Router router = new Router(8080);
-            router.controllers.add(new AlbumsController(catalog));
-            router.start();
-
-        } catch (IOException ex) {
-            System.err.println("Error: unable to load catalog at " + jsonFile);
-            System.err.println(ex.getMessage());
-        }
+        JsonDAOAlbums dao = new JsonDAOAlbums();
+        Catalog catalog = new Catalog(dao);
+        Router router = new Router(8080);
+        router.controllers.add(new AlbumsController(catalog));
+        router.start();
     }
 }
