@@ -1,6 +1,6 @@
 [
 	{
-		"id": "1",
+		"id": "0",
 		"title": "Hide your heart",
 		"artist": "Bonnie Tyler",
 		"instock": false,
@@ -8,7 +8,7 @@
 		"year": 1988
 	},
 	{
-		"id": "2",
+		"id": "1",
 		"title": "Greatest Hits",
 		"artist": "Dolly Parton",
 		"instock": true,
@@ -16,7 +16,7 @@
 		"year": 1982
 	},
 	{
-		"id": "3",
+		"id": "2",
 		"title": "Still got the blues",
 		"artist": "Gary Moore",
 		"instock": true,
@@ -24,7 +24,7 @@
 		"year": 1990
 	},
 	{
-		"id": "4",
+		"id": "3",
 		"title": "Eros",
 		"artist": "Eros Ramazzotti",
 		"instock": true,
@@ -32,7 +32,7 @@
 		"year": 1997
 	},
 	{
-		"id": "5",
+		"id": "4",
 		"title": "One night only",
 		"artist": "Bee Gees",
 		"instock": false,
